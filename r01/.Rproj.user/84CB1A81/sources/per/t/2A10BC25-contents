@@ -1,0 +1,14 @@
+# ggmap 설치, ggplot2, ggmap을 import
+install.packages('ggmap')
+library(ggplot2)
+library(ggmap)
+
+# R에서는 c함수 라는 것을 사용해서 데이터를 묶어준다
+# c 함수를 이용해서 서울의 지도를 가지고 온다.
+seoul <- c(left=126.77, bottom=37.40, right=127.17, top=37.70)
+map <- get_stamenmap(seoul, zoom=12, maptype = "terrain")
+ggmap(map)
+
+######## ass find modify! #########
+pop <- read.csv(file.choose(), header = T)
+pop
